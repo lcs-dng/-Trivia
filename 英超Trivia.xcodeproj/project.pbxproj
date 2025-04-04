@@ -6,17 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		47AF2F562D9EEA6F00BA2D66 /* __TriviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF2F522D9EEA6F00BA2D66 /* __TriviaApp.swift */; };
+		47AF2F572D9EEA6F00BA2D66 /* GuessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF2F542D9EEA6F00BA2D66 /* GuessingView.swift */; };
+		47AF2F582D9EEA6F00BA2D66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AF2F4F2D9EEA6F00BA2D66 /* Preview Assets.xcassets */; };
+		47AF2F592D9EEA6F00BA2D66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AF2F532D9EEA6F00BA2D66 /* Assets.xcassets */; };
+		47AF2F5F2D9EEB5800BA2D66 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF2F5E2D9EEB5800BA2D66 /* Player.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		47AF2F3D2D9EEA4F00BA2D66 /* 英超Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "英超Trivia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		47AF2F4F2D9EEA6F00BA2D66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		47AF2F512D9EEA6F00BA2D66 /* __Trivia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = __Trivia.entitlements; sourceTree = "<group>"; };
+		47AF2F522D9EEA6F00BA2D66 /* __TriviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __TriviaApp.swift; sourceTree = "<group>"; };
+		47AF2F532D9EEA6F00BA2D66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47AF2F542D9EEA6F00BA2D66 /* GuessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingView.swift; sourceTree = "<group>"; };
+		47AF2F5E2D9EEB5800BA2D66 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		47AF2F3F2D9EEA4F00BA2D66 /* 英超Trivia */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "英超Trivia";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		47AF2F3A2D9EEA4F00BA2D66 /* Frameworks */ = {
@@ -32,7 +38,7 @@
 		47AF2F342D9EEA4F00BA2D66 = {
 			isa = PBXGroup;
 			children = (
-				47AF2F3F2D9EEA4F00BA2D66 /* 英超Trivia */,
+				47AF2F552D9EEA6F00BA2D66 /* 英超Trivia */,
 				47AF2F3E2D9EEA4F00BA2D66 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +49,43 @@
 				47AF2F3D2D9EEA4F00BA2D66 /* 英超Trivia.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		47AF2F502D9EEA6F00BA2D66 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				47AF2F4F2D9EEA6F00BA2D66 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		47AF2F552D9EEA6F00BA2D66 /* 英超Trivia */ = {
+			isa = PBXGroup;
+			children = (
+				47AF2F522D9EEA6F00BA2D66 /* __TriviaApp.swift */,
+				47AF2F5D2D9EEB2900BA2D66 /* Model */,
+				47AF2F5B2D9EEAB300BA2D66 /* Views */,
+				47AF2F532D9EEA6F00BA2D66 /* Assets.xcassets */,
+				47AF2F512D9EEA6F00BA2D66 /* __Trivia.entitlements */,
+				47AF2F502D9EEA6F00BA2D66 /* Preview Content */,
+			);
+			path = "英超Trivia";
+			sourceTree = "<group>";
+		};
+		47AF2F5B2D9EEAB300BA2D66 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				47AF2F542D9EEA6F00BA2D66 /* GuessingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47AF2F5D2D9EEB2900BA2D66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47AF2F5E2D9EEB5800BA2D66 /* Player.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +102,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				47AF2F3F2D9EEA4F00BA2D66 /* 英超Trivia */,
 			);
 			name = "英超Trivia";
 			packageProductDependencies = (
@@ -109,6 +149,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47AF2F582D9EEA6F00BA2D66 /* Preview Assets.xcassets in Resources */,
+				47AF2F592D9EEA6F00BA2D66 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +161,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47AF2F562D9EEA6F00BA2D66 /* __TriviaApp.swift in Sources */,
+				47AF2F5F2D9EEB5800BA2D66 /* Player.swift in Sources */,
+				47AF2F572D9EEA6F00BA2D66 /* GuessingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
