@@ -44,6 +44,23 @@ struct GuessingView: View {
                 } label: {
                     Text("Answer")
                 }
+                
+                Button {
+                    resetGame()
+                } label: {
+                    if feedback == "✅" || feedback == "❌" {
+                        
+                        // The button is called "Next" after the user answers
+                        Text("Next")
+                        
+                    } else {
+                        
+                        // Called "Skip" otherwise
+                        Text("Skip")
+                        
+                    }
+                }
+
             }
             
         }
@@ -52,11 +69,22 @@ struct GuessingView: View {
     
     func checkGuess() {
         
+        // Feedbacks provided according to the user's answer
         if userGuess == currentPlayer.playerName {
             feedback = "✅"
         } else if userGuess != currentPlayer.playerName {
             feedback = "❌"
         }
+        
+    }
+    
+    func resetGame() {
+        
+        // Next player appears
+        currentPlayer = playerToGuess.randomElement()!
+        
+        // Reset the textfield
+        userGuess = ""
         
     }
     
