@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		473130512DA993B6000CC4A8 /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473130502DA993B6000CC4A8 /* Outcome.swift */; };
+		4771FA252DA81E4C00A22487 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771FA242DA81E4C00A22487 /* Result.swift */; };
 		47AF2F562D9EEA6F00BA2D66 /* __TriviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF2F522D9EEA6F00BA2D66 /* __TriviaApp.swift */; };
 		47AF2F572D9EEA6F00BA2D66 /* GuessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF2F542D9EEA6F00BA2D66 /* GuessingView.swift */; };
 		47AF2F582D9EEA6F00BA2D66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AF2F4F2D9EEA6F00BA2D66 /* Preview Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		473130502DA993B6000CC4A8 /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
+		4771FA242DA81E4C00A22487 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		47AF2F3D2D9EEA4F00BA2D66 /* 英超Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "英超Trivia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AF2F4F2D9EEA6F00BA2D66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		47AF2F512D9EEA6F00BA2D66 /* __Trivia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = __Trivia.entitlements; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 			children = (
 				47AF2F5E2D9EEB5800BA2D66 /* Player.swift */,
 				47EA0C742DA55D610090E478 /* Aspect.swift */,
+				4771FA242DA81E4C00A22487 /* Result.swift */,
+				473130502DA993B6000CC4A8 /* Outcome.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				47AF2F562D9EEA6F00BA2D66 /* __TriviaApp.swift in Sources */,
+				4771FA252DA81E4C00A22487 /* Result.swift in Sources */,
+				473130512DA993B6000CC4A8 /* Outcome.swift in Sources */,
 				47AF2F5F2D9EEB5800BA2D66 /* Player.swift in Sources */,
 				47AF2F572D9EEA6F00BA2D66 /* GuessingView.swift in Sources */,
 				47EA0C752DA55D610090E478 /* Aspect.swift in Sources */,

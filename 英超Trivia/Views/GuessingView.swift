@@ -19,12 +19,15 @@ struct GuessingView: View {
         
     // Aspect of the player to answer
     @State var selectedAspect: Aspect = .name
-    
-    // Check whether the answer is correct or not
-    @State var isCorrect: Bool?
+        
+    // What was the outcome of the given guess?
+    @State var currentOutcome: Outcome = .undetermined
     
     // Is the "Answer" button pressed?
     @State var isAnswerSubmitted = false
+    
+    // The list of previous guesses
+    @State var history: [Result] = [] // empty array
     
     // MARK: Computed properties
     var body: some View {
@@ -38,63 +41,116 @@ struct GuessingView: View {
         .pickerStyle(SegmentedPickerStyle())
         .padding()
         
-        VStack {
+        HStack {
             
-            ZStack {
-                // The prompt image
-                Image(currentPlayer.imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .padding()
+            VStack {
                 
-                // Giving feedbacks to the user based on the outcome of the answer
-                if let isCorrect = isCorrect {
-                    let feedback = isCorrect ? "✅" : "❌"
+                ZStack {
+                    // The prompt image
+                    Image(currentPlayer.imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .padding()
+                        .frame(width: 300, height: 300)
                     
-                    Text(feedback)
+                        
+                    Text(currentOutcome.rawValue)
                         .font(.system(size: 20))
                         .background(Color.white)
                         .cornerRadius(5)
                 }
-            }
-            
-            HStack {
-                TextField("Enter the answer", text: $userGuess)
                 
-                Button {
-                    let correctAnswer = getCorrectAnswer(for: selectedAspect)
+                HStack {
+                    TextField("Enter the answer", text: $userGuess)
                     
-                    isCorrect = userGuess.lowercased() == correctAnswer.lowercased()
-                    
-                    isAnswerSubmitted.toggle()
-                } label: {
-                    Text("Answer")
-                }
-                                
-                Button {
-                    resetGame()
-                } label: {
-                    if isAnswerSubmitted == true {
+                    Button {
+                        checkGuess()
                         
-                        // The button is called "Next" after the user answers
-                        Text("Next")
-                        
-                    } else {
-                        
-                        // Called "Skip" otherwise
-                        Text("Skip")
-                        
+                        isAnswerSubmitted.toggle()
+                    } label: {
+                        Text("Answer")
                     }
+                    
+                    Button {
+                        resetGame()
+                    } label: {
+                        if isAnswerSubmitted == true {
+                            
+                            // The button is called "Next" after the user answers
+                            Text("Next")
+                            
+                        } else {
+                            
+                            // Called "Skip" otherwise
+                            Text("Skip")
+                            
+                        }
+                    }
+                    
                 }
-
+                .padding()
+                
             }
             .padding()
             
+            VStack {
+                
+                List(history) { currentResult in
+                    
+                    HStack {
+                        
+                        Image(currentResult.player.imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 70, height: 70)
+                        
+                        Text(currentResult.guessProvided)
+                        
+                        Text("(\(currentResult.aspect))")
+                        
+                        Spacer()
+                        
+                        Text(currentResult.outcome)
+                        
+                    }
+                    
+                }
+                
+            }
+            
         }
-        .padding()
+            
     }
         
+    // MARK: Functions
+    func checkGuess() {
+        
+        let correctAnswer = getCorrectAnswer(for: selectedAspect)
+        
+        if userGuess.lowercased() == correctAnswer.lowercased() {
+            currentOutcome = .correct
+            print("Correct")
+        } else {
+            currentOutcome = .incorrect
+            print("Incorrect")
+        }
+        
+    }
+    
     func resetGame() {
+                
+        if currentOutcome != .undetermined {
+            // Save answers in [history]
+            history.insert(
+                Result(
+                    player: currentPlayer,
+                    guessProvided: userGuess,
+                    aspect: selectedAspect.rawValue,
+                    outcome: currentOutcome.rawValue
+                ),
+                at: 0
+            )
+        }
         
         // Next player appears
         currentPlayer = playerToGuess.randomElement()!
@@ -103,8 +159,8 @@ struct GuessingView: View {
         userGuess = ""
         
         // Get rid of the feedback
-        isCorrect = nil
-        
+        currentOutcome = .undetermined
+
         // Turn the "Next" button back to "Skip" when the button is pressed
         isAnswerSubmitted = false
         
