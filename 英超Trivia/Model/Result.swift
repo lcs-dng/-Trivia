@@ -21,6 +21,6 @@ struct Result: Identifiable {
     let aspect: String
     
     // Whether the user is correct or not
-    let outcome: String
+    let outcome: Outcome
     
 }

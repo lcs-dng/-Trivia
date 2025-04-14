@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		473130512DA993B6000CC4A8 /* Outcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473130502DA993B6000CC4A8 /* Outcome.swift */; };
 		4771FA252DA81E4C00A22487 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771FA242DA81E4C00A22487 /* Result.swift */; };
+		478FA6492DADB7D400274FF4 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478FA6482DADB7D400274FF4 /* Filter.swift */; };
 		47AF2F562D9EEA6F00BA2D66 /* __TriviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF2F522D9EEA6F00BA2D66 /* __TriviaApp.swift */; };
 		47AF2F572D9EEA6F00BA2D66 /* GuessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AF2F542D9EEA6F00BA2D66 /* GuessingView.swift */; };
 		47AF2F582D9EEA6F00BA2D66 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AF2F4F2D9EEA6F00BA2D66 /* Preview Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		473130502DA993B6000CC4A8 /* Outcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outcome.swift; sourceTree = "<group>"; };
 		4771FA242DA81E4C00A22487 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		478FA6482DADB7D400274FF4 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		47AF2F3D2D9EEA4F00BA2D66 /* 英超Trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "英超Trivia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AF2F4F2D9EEA6F00BA2D66 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		47AF2F512D9EEA6F00BA2D66 /* __Trivia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = __Trivia.entitlements; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		478FA64A2DADB7E000274FF4 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				478FA6482DADB7D400274FF4 /* Filter.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		47AF2F342D9EEA4F00BA2D66 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				47AF2F522D9EEA6F00BA2D66 /* __TriviaApp.swift */,
+				478FA64A2DADB7E000274FF4 /* Functions */,
 				47AF2F5D2D9EEB2900BA2D66 /* Model */,
 				47AF2F5B2D9EEAB300BA2D66 /* Views */,
 				47AF2F532D9EEA6F00BA2D66 /* Assets.xcassets */,
@@ -170,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				478FA6492DADB7D400274FF4 /* Filter.swift in Sources */,
 				47AF2F562D9EEA6F00BA2D66 /* __TriviaApp.swift in Sources */,
 				4771FA252DA81E4C00A22487 /* Result.swift in Sources */,
 				473130512DA993B6000CC4A8 /* Outcome.swift in Sources */,

@@ -29,6 +29,9 @@ struct GuessingView: View {
     // The list of previous guesses
     @State var history: [Result] = [] // empty array
     
+    // Keep track of what the user selected from the picker for filtering
+    @State var selectedOutcomeFilter: Outcome = .undetermined // everything
+    
     // MARK: Computed properties
     var body: some View {
         
@@ -95,7 +98,19 @@ struct GuessingView: View {
             
             VStack {
                 
-                List(history) { currentResult in
+                // Picker to select what outcome to show
+                Picker("Filtering on", selection: $selectedOutcomeFilter) {
+                    // Options that show up in the picker
+                    Text("All results").tag(Outcome.undetermined)
+                    Text("Correct").tag(Outcome.correct)
+                    Text("Incorrect").tag(Outcome.incorrect)
+                }
+                
+                List(
+                    
+                    filtering(originalList: history, on: selectedOutcomeFilter)
+                    
+                ) { currentResult in
                     
                     HStack {
                         
@@ -110,7 +125,7 @@ struct GuessingView: View {
                         
                         Spacer()
                         
-                        Text(currentResult.outcome)
+                        Text(currentResult.outcome.rawValue)
                         
                     }
                     
@@ -146,7 +161,7 @@ struct GuessingView: View {
                     player: currentPlayer,
                     guessProvided: userGuess,
                     aspect: selectedAspect.rawValue,
-                    outcome: currentOutcome.rawValue
+                    outcome: currentOutcome
                 ),
                 at: 0
             )
