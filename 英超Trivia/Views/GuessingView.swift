@@ -29,8 +29,8 @@ struct GuessingView: View {
     // The list of previous guesses
     @State var history: [Result] = [] // empty array
     
-    // Keep track of what the user selected from the picker for filtering
-    @State var selectedOutcomeFilter: Outcome = .undetermined // everything
+    // Keep track of what is entered in the search bar
+    @State var searchText: String = ""
     
     // MARK: Computed properties
     var body: some View {
@@ -97,18 +97,32 @@ struct GuessingView: View {
             .padding()
             
             VStack {
-                
-                // Picker to select what outcome to show
-                Picker("Filtering on", selection: $selectedOutcomeFilter) {
-                    // Options that show up in the picker
-                    Text("All results").tag(Outcome.undetermined)
-                    Text("Correct").tag(Outcome.correct)
-                    Text("Incorrect").tag(Outcome.incorrect)
+                                
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(.gray)
+
+                    TextField("Search", text: $searchText)
+                        .autocorrectionDisabled(true)
+                        .textFieldStyle(PlainTextFieldStyle()) // Remove default style
+
+                    if !searchText.isEmpty {
+                        Button(action: {
+                            searchText = ""
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                        }
+                    }
                 }
+                .padding(8)
+                .background(Color(Color.gray.opacity(0.2)))
+                .cornerRadius(10)
+                .padding(.horizontal)
                 
                 List(
                     
-                    filtering(originalList: history, on: selectedOutcomeFilter)
+                    searching(originalList: history, query: searchText)
                     
                 ) { currentResult in
                     
@@ -132,7 +146,7 @@ struct GuessingView: View {
                 }
                 
             }
-            
+
         }
             
     }
